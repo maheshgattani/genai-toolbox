@@ -1,0 +1,40 @@
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Sources configuration
+sources:
+  # Pub/Sub source configuration
+  my-pubsub:
+    kind: pubsub
+    projectId: resbooker-c6fa3  # Replace with your GCP project ID
+    # Optional: Path to service account key file
+    # credentialsFile: /path/to/creds.json
+    # Optional: Endpoint for Pub/Sub emulator
+    # endpoint: localhost:8085
+
+authServices:
+  my-auth-service:
+    kind: google
+    clientId: "896923433028-ue34tui6aihuva40il2f30dqp78g0rfl.apps.googleusercontent.com"  # Replace with your Google OAuth client ID
+
+# Tools configuration
+tools:
+  # Tool to create a Pub/Sub topic
+  pubsubcreatetopic:
+    kind: pubsubcreatetopic
+    source: my-pubsub  # References the Pub/Sub source defined above
+    description: "Creates a new Cloud Pub/Sub topic"
+    authRequired:
+      - my-auth-service    
+
