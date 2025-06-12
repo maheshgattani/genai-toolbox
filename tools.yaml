@@ -17,7 +17,7 @@ sources:
   # Pub/Sub source configuration
   my-pubsub:
     kind: pubsub
-    projectId: resbooker-c6fa3  # Replace with your GCP project ID
+    projectId: mahesh-test-project  # Replace with your GCP project ID
     # Optional: Path to service account key file
     # credentialsFile: /path/to/creds.json
     # Optional: Endpoint for Pub/Sub emulator
@@ -46,3 +46,29 @@ tools:
     description: "Deletes a Cloud Pub/Sub topic"
     # authRequired:
     #   - my-auth-service    
+
+  pubsubpublish:
+    name: pubsubpublish
+    kind: pubsubpublish
+    source: my-pubsub
+    description: "Publishes a message to a Cloud Pub/Sub topic"
+    # authRequired:
+    #   - my-auth-service
+
+  pubsubsubscribe:
+    name: pubsubsubscribe
+    kind: pubsubsubscribe
+    source: my-pubsub
+    description: Subscribes to a Cloud Pub/Sub topic and receives messages
+
+  pubsubcreatesubscription:
+    name: pubsubcreatesubscription
+    kind: pubsubcreatesubscription
+    source: my-pubsub
+    description: Creates a new subscription to a Cloud Pub/Sub topic
+
+  pubsubdeletesubscription:
+    name: pubsubdeletesubscription
+    kind: pubsubdeletesubscription
+    source: my-pubsub
+    description: Deletes a Cloud Pub/Sub subscription

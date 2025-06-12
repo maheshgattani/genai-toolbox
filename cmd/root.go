@@ -54,9 +54,14 @@ import (
 	_ "github.com/googleapis/genai-toolbox/internal/tools/postgresexecutesql"
 	_ "github.com/googleapis/genai-toolbox/internal/tools/postgressql"
 	_ "github.com/googleapis/genai-toolbox/internal/tools/pubsubcreatetopic"
+	_ "github.com/googleapis/genai-toolbox/internal/tools/pubsubdeletetopic"
+	_ "github.com/googleapis/genai-toolbox/internal/tools/pubsubpublish"
+	_ "github.com/googleapis/genai-toolbox/internal/tools/pubsubsubscribe"
 	_ "github.com/googleapis/genai-toolbox/internal/tools/spanner"
 	_ "github.com/googleapis/genai-toolbox/internal/tools/spannerexecutesql"
 	_ "github.com/googleapis/genai-toolbox/internal/tools/sqlitesql"
+	_ "github.com/googleapis/genai-toolbox/internal/tools/pubsubcreatesubscription"
+	_ "github.com/googleapis/genai-toolbox/internal/tools/pubsubdeletesubscription"
 
 	"github.com/spf13/cobra"
 
