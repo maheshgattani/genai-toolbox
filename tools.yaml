@@ -32,9 +32,17 @@ authServices:
 tools:
   # Tool to create a Pub/Sub topic
   pubsubcreatetopic:
+    name: pubsubcreatetopic
     kind: pubsubcreatetopic
     source: my-pubsub  # References the Pub/Sub source defined above
     description: "Creates a new Cloud Pub/Sub topic"
-    authRequired:
-      - my-auth-service    
+    # authRequired:
+    #   - my-auth-service    
 
+  pubsubdeletetopic:
+    name: pubsubdeletetopic
+    kind: pubsubdeletetopic
+    source: my-pubsub
+    description: "Deletes a Cloud Pub/Sub topic"
+    # authRequired:
+    #   - my-auth-service    

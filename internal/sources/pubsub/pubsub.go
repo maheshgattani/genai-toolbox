@@ -119,3 +119,12 @@ func (s *Source) Client() *pubsub.Client {
 func (s *Source) ProjectID() string {
 	return s.projectID
 }
+
+// DeleteTopic deletes a Pub/Sub topic
+func (s *Source) DeleteTopic(ctx context.Context, topicID string) error {
+	topic := s.client.Topic(topicID)
+	if err := topic.Delete(ctx); err != nil {
+		return fmt.Errorf("failed to delete topic %s: %w", topicID, err)
+	}
+	return nil
+}
